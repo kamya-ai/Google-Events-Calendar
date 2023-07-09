@@ -1,0 +1,51 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# - rule: get event
+#   steps:
+#   - intent: get_event
+#   - action: action_get_event
+
+# - rule: Activate form
+#   steps:
+#   - intent: add_event
+#   - action: action_add_event
+
+# - rule: get free slot
+#   steps:
+#   - intent: get_free_slots
+#   - action: action_get_free_slots
+
+# - rule: Slot form
+#   condition:
+#   - active_loop: slot_form
+#   steps:
+#   - action: slot_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_get_free_slots
+
+# - rule: Submit form
+#   condition:
+#   # Condition that form is active.
+#   - active_loop: event_form
+#   steps:
+#   # Form is deactivated
+#   - action: event_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   # The actions we want to run when the form is submitted.
+#   - action: action_add_event

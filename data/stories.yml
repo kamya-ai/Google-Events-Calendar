@@ -1,0 +1,84 @@
+version: "3.1"
+
+stories:
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+- story: greeting path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - checkpoint: affirm_or_deny
+
+- story: deny_decision
+  steps:
+  - checkpoint: affirm_or_deny
+  - intent: deny
+  - action: utter_goodbye
+
+- story: add_event
+  steps:
+  - checkpoint: addevent_or_getslot
+  - intent: add_event
+  - action: action_add_event
+  - action: utter_further_help
+  - checkpoint: affirm_or_deny
+
+- story: free_slots
+  steps:
+  - checkpoint: addevent_or_getslot
+  - intent: get_free_slots
+  - action: action_get_free_slots
+  - action: utter_further_help
+  - checkpoint: affirm_or_deny
+
+- story: get_events
+  steps:
+  - checkpoint: addevent_or_getslot
+  - intent: get_event
+  - action: action_get_event
+  - action: utter_further_help
+  - checkpoint: affirm_or_deny
+
+# - story: activate form
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: add_event
+#   - action: event_form
+
+# - story: greet and restaurant
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - intent: add_event
+#     - action: restaurant_form
+#     - active_loop: restaurant_form
+#     - active_loop: null
+#     - action: utter_goodbye
