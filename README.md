@@ -6,6 +6,7 @@ This program integrates Rasa NLU with the Google Calendar API, allowing you to e
 The Rasa NLU + Google Calendar API integration program provides a user-friendly interface to schedule events, retrieve event lists, and check for available free time slots. With the power of natural language understanding and seamless Google Calendar integration, you can effortlessly manage your busy schedule. ✨
 
 ## 🎥 Demo
+[Google-Events-Chatbot.webm](https://github.com/kamya-ai/Google-Events-Calendar/assets/139073975/1151648b-0714-4fb6-b2c9-222d7b8c3c70)
 
 ## ⭐️ Features
 
